@@ -1,13 +1,11 @@
 PATH
   remote: .
   specs:
-    event-shooter (0.1.0)
-      faraday_middleware
+    inews_client (0.1.0)
       libxml-ruby
       savon (~> 2.3.0)
       sax-machine
       settingslogic
-      warden-hmac-authentication
       xpath
 
 GEM
@@ -18,10 +16,6 @@ GEM
       nokogiri
     builder (3.2.2)
     coderay (1.1.0)
-    faraday (0.8.9)
-      multipart-post (~> 1.2.0)
-    faraday_middleware (0.9.0)
-      faraday (>= 0.7.4, < 0.9)
     gyoku (1.1.1)
       builder (>= 2.1.2)
     httpi (2.1.0)
@@ -31,7 +25,6 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.6.0)
-    multipart-post (1.2.0)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
     nori (2.3.0)
@@ -53,12 +46,7 @@ GEM
     sax-machine (0.2.1)
       nokogiri (~> 1.6.0)
     settingslogic (2.0.9)
-    slop (3.4.7)
-    warden (1.2.3)
-      rack (>= 1.0)
-    warden-hmac-authentication (0.6.4)
-      rack
-      warden
+    slop (3.5.0)
     wasabi (3.2.3)
       httpi (~> 2.0)
       mime-types (< 2.0.0)
@@ -70,6 +58,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  event-shooter!
+  inews_client!
   pry
   rake
