@@ -12,7 +12,7 @@ module InewsClient
     def get_stories
       #ensure_connected!
       message = {
-        'types:NumberOfStoriesToGet' => "#{Settings.config.InewsClient.NumberOfStoriesToGet}",
+        'types:NumberOfStoriesToGet' => "#{Settings.config.iNEWS_Client.NumberOfStoriesToGet}",
         'types:IsStoryBodyIncluded' => 'true',
         'types:Navigation' => 'SAME',
       }
@@ -33,7 +33,7 @@ module InewsClient
     end
 
     def stories
-      get_stories.to_array(:get_stories_response, :stories)
+      get_stories.to_array(:get_stories_response, :stories).map { |story| StoryEntry.parse(story[:story_as_nsml]) }
     end
 
     def get_queue_records

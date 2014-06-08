@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+
+project_root = File.join(File.dirname(__FILE__), '..')
+
+$LOAD_PATH << File.join(project_root, 'lib')
+
+require 'inews_client'
+
+load File.join(project_root, 'watcher.rb')
