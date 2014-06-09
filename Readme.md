@@ -1,4 +1,4 @@
-# Event Shooter
+# iNews-client
 
 Ruby client for iNEWS Web Services API
 
