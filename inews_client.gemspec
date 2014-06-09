@@ -19,7 +19,6 @@ on air. You can get information about a story, and if it got fired already }
   gem.add_dependency 'savon', '~> 2.3.0'
   gem.add_dependency 'xpath'
   gem.add_dependency 'sax-machine'
-  gem.add_dependency 'settingslogic'
   gem.add_dependency 'libxml-ruby'
 
   gem.add_development_dependency 'rake'

@@ -2,7 +2,7 @@ module InewsClient
   class Queue < Struct.new(:inews)
     def client_options
       {
-        wsdl: "#{Settings.config.iNEWS_WSAPI.wsdl}/inewswebservice/services/inewsqueue?wsdl",
+        wsdl: "#{ENV['wsdl']}/inewswebservice/services/inewsqueue?wsdl",
         namespaces:{
           "xmlns:types" => "http://avid.com/inewsqueue/types",
         },
@@ -12,7 +12,7 @@ module InewsClient
     def get_stories
       #ensure_connected!
       message = {
-        'types:NumberOfStoriesToGet' => "#{Settings.config.iNEWS_Client.NumberOfStoriesToGet}",
+        'types:NumberOfStoriesToGet' => "#{ENV['stories_to_get']}",
         'types:IsStoryBodyIncluded' => 'true',
         'types:Navigation' => 'SAME',
       }

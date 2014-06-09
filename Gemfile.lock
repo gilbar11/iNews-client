@@ -5,7 +5,6 @@ PATH
       libxml-ruby
       savon (~> 2.3.0)
       sax-machine
-      settingslogic
       xpath
 
 GEM
@@ -45,7 +44,6 @@ GEM
       wasabi (~> 3.2.2)
     sax-machine (0.2.1)
       nokogiri (~> 1.6.0)
-    settingslogic (2.0.9)
     slop (3.5.0)
     wasabi (3.2.3)
       httpi (~> 2.0)

@@ -6,7 +6,7 @@ module InewsClient
 
     def self.client_options
       {
-        wsdl: "#{Settings.config.iNEWS_WSAPI.wsdl}/inewswebservice/services/inewssystem?wsdl",
+        wsdl: "#{ENV['wsdl']}/inewswebservice/services/inewssystem?wsdl",
         namespaces:{
           "xmlns:types" => "http://avid.com/inewssystem/types",
         },
@@ -23,9 +23,9 @@ module InewsClient
 
     def self.connect()
       message = {
-        'types:Username' => Settings.config.iNEWS_Server.Username,
-        'types:Password' => Settings.config.iNEWS_Server.Password,
-        'types:Servername' => Settings.config.iNEWS_Server.Servername,
+        'types:Username' => ENV['username'],
+        'types:Password' => ENV['password'],
+        'types:Servername' => ENV['servername'],
       }
       client.call(:connect, message: message)
     end

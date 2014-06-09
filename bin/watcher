@@ -8,4 +8,4 @@ $LOAD_PATH << File.join(project_root, 'lib')
 
 require 'inews_client'
 
-load File.join(project_root, 'watcher.rb')
+load File.join(project_root, 'inews_client.rb')
