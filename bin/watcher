@@ -3,12 +3,12 @@
 require 'bundler/setup'
 
 project_root = File.join(File.dirname(__FILE__), '..')
-
+external_root_project = File.join(File.dirname(__FILE__), '../..')
 $LOAD_PATH << File.join(project_root, 'lib')
 
 require 'inews_client'
 
-exec = ""
+exec = "watcher.rb"
 exec = ARGF.argv.first if ARGF.argv
 
-load File.join(project_root, exec)
+load File.join(external_root_project, exec)
