@@ -12,7 +12,7 @@ class StoryEntry
   end
 
   def id
-    app_id.split('-').last
+    app_id.split('-').last if app_id
   end
 
   def field_content
