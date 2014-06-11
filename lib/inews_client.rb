@@ -9,7 +9,7 @@ module InewsClient
     InewsClient::System.session do |inews|
       inews.queue.with_queue(ENV['current_queue']) do |queue|
         loop do
-          sleep(ENV['interval'])
+          sleep(ENV['interval'].to_i)
           queue.stories.select {|s| s.fired? }.each do |story|
             next if fired_stories.any? { |s| s.id == story.id }
             fired_stories << story
