@@ -6,6 +6,8 @@ require 'inews_client/story_entry'
 module InewsClient
   def self.watch_queue(&block)
     fired_stories = []
+    interval = ENV['interval'].to_i
+    interval = 2 unless interval
     InewsClient::System.session do |inews|
       inews.queue.with_queue(ENV['current_queue']) do |queue|
         loop do
