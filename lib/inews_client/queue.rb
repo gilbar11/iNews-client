@@ -10,9 +10,10 @@ module InewsClient
     end
 
     def get_stories
-      #ensure_connected!
+      num_of_stories = ENV['stories_to_get'].to_i
+      num_of_stories = 50 unless num_of_stories
       message = {
-        'types:NumberOfStoriesToGet' => "#{ENV['stories_to_get'].to_i}",
+        'types:NumberOfStoriesToGet' => "#{num_of_stories}",
         'types:IsStoryBodyIncluded' => 'true',
         'types:Navigation' => 'SAME',
       }
