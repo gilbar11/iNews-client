@@ -11,4 +11,12 @@ class StoryEntry
     self.air_date != "0" && self.air_date 
   end
 
+  def id
+    app_id.split('-').last
+  end
+
+  def field_content
+    self.app_id
+  end
+
 end

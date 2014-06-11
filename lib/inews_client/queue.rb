@@ -12,7 +12,7 @@ module InewsClient
     def get_stories
       #ensure_connected!
       message = {
-        'types:NumberOfStoriesToGet' => "#{ENV['stories_to_get']}",
+        'types:NumberOfStoriesToGet' => "#{ENV['stories_to_get'].to_i}",
         'types:IsStoryBodyIncluded' => 'true',
         'types:Navigation' => 'SAME',
       }
