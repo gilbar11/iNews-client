@@ -3,7 +3,7 @@
 require 'bundler/setup'
 
 project_root = File.join(File.dirname(__FILE__), '..')
-external_root_project = File.join(File.dirname(__FILE__), '../..')
+external_root_project = File.join(File.dirname(__FILE__), '../../../..')
 $LOAD_PATH << File.join(project_root, 'lib')
 
 require 'inews_client'
