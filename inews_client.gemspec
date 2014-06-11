@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Gilad Barzilay"]
   gem.email         = ["gilbar11@gmail.com"]
   gem.description   = %q{ This service works as a daemon that watches an iNEWS rundown while the show is
-on air. You can get information about a story, and if it got fired already }
+on air. You can get information about a story, and if you got fired already }
   gem.summary       = %q{ Ruby client for iNEWS Web Services API }
   gem.homepage      = "https://github.com/gilbar11/iNews-client"
 
