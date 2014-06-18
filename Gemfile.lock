@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    inews_client (0.1.1)
+    inews_client (0.1.2)
       libxml-ruby
       savon (~> 2.3.0)
       sax-machine

@@ -9,8 +9,8 @@ module InewsClient
       }
     end
 
-    def get_stories
-      num_of_stories = ENV['stories_to_get'].to_i
+    def get_stories(options)
+      num_of_stories = options['stories_to_get'].to_i
       num_of_stories = 50 unless num_of_stories
       message = {
         'types:NumberOfStoriesToGet' => "#{num_of_stories}",
@@ -28,13 +28,13 @@ module InewsClient
       client.call(:set_current_queue, message: message, cookies: inews.auth_cookies)
     end
 
-    def with_queue(queue_full_path, &block)
-      set_current_queue(queue_full_path)
+    def with_queue(options, &block)
+      set_current_queue(options['current_queue'])
       block.call(inews.queue)
     end
 
-    def stories
-      get_stories.to_array(:get_stories_response, :stories).map { |story| StoryEntry.parse(story[:story_as_nsml]) }
+    def stories(options)
+      get_stories(options).to_array(:get_stories_response, :stories).map { |story| StoryEntry.parse(story[:story_as_nsml]) }
     end
 
     def get_queue_records

@@ -21,11 +21,11 @@ module InewsClient
       Savon.client(client_options)
     end
 
-    def self.connect()
+    def self.connect(options)
       message = {
-        'types:Username' => ENV['username'],
-        'types:Password' => ENV['password'],
-        'types:Servername' => ENV['servername'],
+        'types:Username' => "#{options['username']}",
+        'types:Password' => "#{options['password']}",
+        'types:Servername' => "#{options['servername']}",
       }
       client.call(:connect, message: message)
     end
@@ -41,8 +41,8 @@ module InewsClient
       end
     end
 
-    def self.session(&block)
-      response = connect
+    def self.session(options, &block)
+      response = connect(options)
       auth_cookies = response.http.cookies
       if auth_cookies
         client = InewsClient::System.new(auth_cookies)
