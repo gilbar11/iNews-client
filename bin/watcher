@@ -9,7 +9,7 @@ if ARGF.argv
 end
 
 project_root = File.join(File.dirname(__FILE__), '..')
-external_root_project = File.join(File.dirname(__FILE__), path)
+external_root_project = path
 $LOAD_PATH << File.join(project_root, 'lib')
 
 require 'inews_client'
